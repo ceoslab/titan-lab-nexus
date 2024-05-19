@@ -21,7 +21,7 @@
     <repositories>
         <repository>
             <id>nexus</id>
-            <url>http://${NEXUS_IP}:${NEXUS_PORT}/repository/${NEXUS_REPO}/</url>
+            <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
         </repository>
     </repositories>
     
