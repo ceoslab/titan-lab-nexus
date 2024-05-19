@@ -11,10 +11,10 @@ def jenkinsNode = 'jdk21'
 def gitCredentialId = 'github'
 
 // Defines the git repository.
-def gitRepo = 'git@github.com:ceoslab/titan-core.git'
+def gitRepo = 'git@github.com:ceoslab/titan-lab-nexus.git'
 
 // Defines the application name.
-def appName = 'titan-core'
+def appName = 'titan-lab-nexus'
 
 // Defines the Dockerfile path.
 def dockerFilePath = 'src/main/docker/Dockerfile.native'
