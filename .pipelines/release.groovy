@@ -52,7 +52,7 @@ node(jenkinsNode) {
 
       // Creates the build artifact.
       stage('maven-build') {
-        sh("./mvnw -s settings.xml -DskipTests install")
+        sh("./mvnw -s settings.xml clean install")
       }
 
       docker.withRegistry("https://${env.DOCKER_REGISTRY_URL}", env.DOCKER_REGISTRY_CREDENTIALS_ID) {
