@@ -17,7 +17,14 @@
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.2.5</surefire-plugin.version>
     </properties>
-
+<!--
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
+        </repository>
+    </repositories>
+-->
     <dependencyManagement>
         <dependencies>
             <dependency>
