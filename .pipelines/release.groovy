@@ -52,7 +52,7 @@ node(jenkinsNode) {
 
       // Creates the build artifact.
       stage('maven-build') {
-        sh("./mvnw package -Pnative")
+        sh("./mvnw package -Pnative -T 1C")
       }
 
       docker.withRegistry("https://${env.DOCKER_REGISTRY_URL}", env.DOCKER_REGISTRY_CREDENTIALS_ID) {
