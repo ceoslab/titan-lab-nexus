@@ -2,7 +2,15 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
-    
+
+    <mirrors>
+        <mirror>
+            <id>public</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
+        </mirror>
+    </mirrors>
+
     <servers>
         <server>
             <id>nexus</id>
