@@ -10,5 +10,21 @@
             <password>admin123</password>
         </server>
     </servers>
-
+    <profiles>
+        <profile>
+            <repositories>
+                <repository>
+                    <id>nexus</id>
+<!--                    <username>admin</username>-->
+<!--                    <password>admin123</password>-->
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
 </settings>
