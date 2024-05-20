@@ -15,7 +15,7 @@
             <id>nexus</id>
             <repositories>
                 <repository>
-                    <id>nexus</id>
+                    <id>registry.quarkus.io</id>
                     <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
                     <snapshots>
                         <enabled>true</enabled>
