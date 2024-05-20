@@ -10,6 +10,7 @@
             <password>admin123</password>
         </server>
     </servers>
+
     <profiles>
         <profile>
             <id>nexus</id>
@@ -17,11 +18,26 @@
                 <repository>
                     <id>registry.quarkus.io</id>
                     <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
                 </repository>
             </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>registry.quarkus.io</id>
+                    <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
         </profile>
     </profiles>
     <activeProfiles>
