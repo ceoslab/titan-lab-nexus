@@ -10,8 +10,6 @@ def jenkinsNode = 'jdk21'
 // Defines the git credential ID.
 def gitCredentialId = 'github'
 
-def nexusCredentialId = 'nexusCredential'
-
 // Defines the git repository.
 def gitRepo = 'git@github.com:ceoslab/titan-lab-nexus.git'
 
@@ -54,7 +52,7 @@ node(jenkinsNode) {
 
       // Creates the build artifact.
       stage('maven-build') {
-        withCredentials([usernamePassword(credentialsId: 'nexusCredentialId', usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASSWORD')]) {
+        withCredentials([usernamePassword(credentialsId: 'nexusCredential', usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASSWORD')]) {
             sh("./mvnw package -Pnative -s settings.xml -Djdk.http.auth.tunneling.disabledSchemes='' -Dnexus.user=${NEXUS_USER} -Dnexus.password=${NEXUS_PASSWORD}")
         }
       }
