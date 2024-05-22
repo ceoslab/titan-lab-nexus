@@ -7,7 +7,7 @@
         <mirror>
             <id>public</id>
             <mirrorOf>*</mirrorOf>
-            <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
+            <url>http://172.16.4.198/repository/registry.quarkus.io/</url>
         </mirror>
     </mirrors>
 
@@ -25,7 +25,7 @@
             <repositories>
                 <repository>
                     <id>registry.quarkus.io</id>
-                    <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
+                    <url>http://172.16.4.198/repository/registry.quarkus.io/</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
@@ -34,7 +34,7 @@
             <pluginRepositories>
                 <pluginRepository>
                     <id>registry.quarkus.io</id>
-                    <url>http://172.16.4.177:8081/repository/registry.quarkus.io/</url>
+                    <url>http://172.16.4.198/repository/registry.quarkus.io/</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
