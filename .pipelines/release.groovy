@@ -52,7 +52,9 @@ node(jenkinsNode) {
 
       // Creates the build artifact.
       stage('maven-build') {
-        sh("./mvnw package -Pnative -s settings.xml -Djdk.http.auth.tunneling.disabledSchemes=''")
+        withCredentials([usernamePassword(credentialsId: 'nexusCredential', usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASSWORD')]) {
+            sh("./mvnw package -Pnative -s settings.xml -Djdk.http.auth.tunneling.disabledSchemes='' -Dnexus.user=${NEXUS_USER} -Dnexus.password=${NEXUS_PASSWORD}")
+        }
       }
 
       docker.withRegistry("https://${env.DOCKER_REGISTRY_URL}", env.DOCKER_REGISTRY_CREDENTIALS_ID) {
