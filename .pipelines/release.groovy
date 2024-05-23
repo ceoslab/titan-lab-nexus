@@ -5,16 +5,16 @@ def gitBranch = params.GIT_BRANCH
 def releaseVersion = params.RELEASE_VERSION
 
 // Defines the Jenkins node.
-def jenkinsNode = 'jdk21'
+def jenkinsNode = 'agent-001'
 
 // Defines the git credential ID.
 def gitCredentialId = 'github'
 
 // Defines the git repository.
-def gitRepo = 'git@github.com:ceoslab/titan-lab-nexus.git'
+def gitRepo = 'git@github.com:ceoslab/titan-core.git'
 
 // Defines the application name.
-def appName = 'titan-lab-nexus'
+def appName = 'titan-core'
 
 // Defines the Dockerfile path.
 def dockerFilePath = 'src/main/docker/Dockerfile.native'
@@ -52,9 +52,7 @@ node(jenkinsNode) {
 
       // Creates the build artifact.
       stage('maven-build') {
-        withCredentials([usernamePassword(credentialsId: 'nexusCredential', usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASSWORD')]) {
-            sh("./mvnw package -Pnative -s settings.xml -Djdk.http.auth.tunneling.disabledSchemes='' -Dnexus.user=${NEXUS_USER} -Dnexus.password=${NEXUS_PASSWORD}")
-        }
+        sh("./mvnw package -Pnative")
       }
 
       docker.withRegistry("https://${env.DOCKER_REGISTRY_URL}", env.DOCKER_REGISTRY_CREDENTIALS_ID) {
