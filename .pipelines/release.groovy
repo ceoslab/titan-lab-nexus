@@ -5,7 +5,7 @@ def gitBranch = params.GIT_BRANCH
 def releaseVersion = params.RELEASE_VERSION
 
 // Defines the Jenkins node.
-def jenkinsNode = 'agent-002'
+def jenkinsNode = 'cloud-slave-jdk21'
 
 // Defines the git credential ID.
 def gitCredentialId = 'github'
